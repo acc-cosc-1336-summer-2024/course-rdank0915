@@ -50,11 +50,19 @@ def handle_menu_option(option):
         print("Invalid Option")
 
 def option_1():
+
+    matrix = []
+
     list1 = input("Enter first taxa: ")
+    matrix.append(list1)
     list2 = input("Enter second taxa: ")
+    matrix.append(list2)
     list3 = input("Enter third taxa: ")
+    matrix.append(list3)
     list4 = input("Enter fourth taxa: ")
-    print(get_p_distance_matrix(list1, list2, list3, list4))
+    matrix.append(list4)
+
+    print(get_p_distance_matrix(matrix))
 
 def option_2():
     choice = input("Would you like to exit Y or N: ")
