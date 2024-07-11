@@ -18,13 +18,19 @@ def get_p_distance(list1, list2):
 
 def get_p_distance_matrix(list1):
 
-    char = len(list1)
-    D_matrix = [[0] * char for _ in range(char)]
+    rows = len(list1)
+    cols = len(list1)
 
-    for i in range(char):
-        for j in range(i+1, char):
-            D_matrix[i][j] = get_p_distance(list1[i], list1[j])
-            D_matrix[j][i] = D_matrix[i][j]
+    D_matrix = []
+
+    for i in range(0, rows):
+        row_list = []
+        for j in range(0, cols):
+            list_a = list1[i]
+            list_b = list1[j]
+            matrix_index = (get_p_distance(list_a, list_b))
+            row_list.append(matrix_index)
+        D_matrix.append(row_list)
 
     return D_matrix
     
