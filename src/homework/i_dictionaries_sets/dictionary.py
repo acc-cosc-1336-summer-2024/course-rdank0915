@@ -18,11 +18,11 @@ def get_p_distance(list1, list2):
 
 def get_p_distance_matrix(list1):
 
-    taxa = len(list1)
-    D_matrix = [[0] * taxa for _ in range(taxa)]
+    char = len(list1)
+    D_matrix = [[0] * char for _ in range(char)]
 
-    for i in range(taxa):
-        for j in range(i+1, taxa):
+    for i in range(char):
+        for j in range(i+1, char):
             D_matrix[i][j] = get_p_distance(list1[i], list1[j])
             D_matrix[j][i] = D_matrix[i][j]
 
@@ -50,9 +50,11 @@ def handle_menu_option(option):
         print("Invalid Option")
 
 def option_1():
-    list1 = input("Enter your first list: ")
-    list2 = input("Enter your second list: ")
-    print(get_p_distance(list1, list2))
+    list1 = input("Enter first taxa: ")
+    list2 = input("Enter second taxa: ")
+    list3 = input("Enter third taxa: ")
+    list4 = input("Enter fourth taxa: ")
+    print(get_p_distance_matrix(list1, list2, list3, list4))
 
 def option_2():
     choice = input("Would you like to exit Y or N: ")
