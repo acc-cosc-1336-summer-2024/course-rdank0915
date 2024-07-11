@@ -8,7 +8,10 @@ def get_p_distance(list1, list2):
     for i in range(len(list1)):
         if list1[i] != list2[i]:
             distance += 1
-    return distance
+
+    p_distance = distance / len(list1)
+
+    return p_distance
 
 #Write code to compare 2 strings character by character and return a value representing the difference
 #between the two
