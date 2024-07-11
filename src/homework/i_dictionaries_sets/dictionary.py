@@ -13,12 +13,21 @@ def get_p_distance(list1, list2):
 
     return p_distance
 
-#Write code to compare 2 strings character by character and return a value representing the difference
-#between the two
+#Write code that computes the distance matrix for a given list of four elements by using the get_p_distance function
+#to compute their distances, and then iterate through all pairs of elements
 
-def get_p_distance_matrix(list1, list2, list3, list4):
+def get_p_distance_matrix(list1):
+
+    taxa = len(list1)
+    D_matrix = [[0] * taxa for _ in range(taxa)]
+
+    for i in range(taxa):
+        for j in range(i+1, taxa):
+            D_matrix[i][j] = get_p_distance(list1[i], list1[j])
+            D_matrix[j][i] = D_matrix[i][j]
+
+    return D_matrix
     
-
 
 def display_menu():
     print("Homework 6 Menu")
