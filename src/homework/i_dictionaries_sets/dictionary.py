@@ -26,9 +26,7 @@ def get_p_distance_matrix(list1):
     for i in range(0, rows):
         row_list = []
         for j in range(0, cols):
-            list_a = list1[i]
-            list_b = list1[j]
-            matrix_index = (get_p_distance(list_a, list_b))
+            matrix_index = (get_p_distance(list1[i], list1[j]))
             row_list.append(matrix_index)
         D_matrix.append(row_list)
 
