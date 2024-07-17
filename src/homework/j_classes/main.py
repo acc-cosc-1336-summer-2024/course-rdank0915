@@ -1,3 +1,4 @@
       
-def get_rolled_value(self):
-    return self.__roll_value
+import class_a
+
+class_a.run_menu()
