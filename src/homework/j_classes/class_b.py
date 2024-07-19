@@ -26,7 +26,7 @@ def option_1():
     die = class_a.Die()
 
     die.roll()
-    die_val = str(die)
+    die_val = (die)
     print(die_val)
 
     choice = "Y"
