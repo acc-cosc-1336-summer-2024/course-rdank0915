@@ -1,4 +1,3 @@
-from src.homework.j_classes.class_a import Die
-from src.homework.j_classes.class_b import run_menu
+import class_b
 
-run_menu()
+class_b.run_menu()

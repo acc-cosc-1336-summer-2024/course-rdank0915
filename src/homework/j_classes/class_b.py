@@ -1,4 +1,4 @@
-from src.homework.j_classes.class_a import Die
+import class_a
 
 def display_menu():
     print("Homework 7 Menu")
@@ -6,37 +6,33 @@ def display_menu():
     print("2-Exit")
 
 def run_menu():
-    die_val = Die()
     option = "1"
     while(option != "2"):
         display_menu()
         option = input("Enter your menu option: ")
-        handle_menu_option(option, die_val)
+        if option == '2':
+            print("Exiting the program...")
+            break
+        handle_menu_option(option)
 
 def handle_menu_option(option):
     if(option == '1'):
         option_1()
-    elif(option == '2'):
-        option_2()
     else:
         print("Invalid Option")
 
-def option_1(die_val):
-    die_val.roll()
+def option_1():
+    
+    die = class_a.Die()
+
+    die.roll()
+    die_val = str(die)
+    print(die_val)
 
     choice = "Y"
     while(choice == "Y" or choice == "N"):
-        choice = input("Would you like to exit Y or N: ")
+        choice = input("Would you to roll again Y or N: ")
         if choice == "Y":
-            print(run_menu())
-        elif choice == "N":
             print(option_1())
-
-def option_2():
-    choice = input("Would you like to exit Y or N: ")
-    if choice == "Y":
-        print("Exiting... ")
-    elif choice == "N":
-        run_menu()
-    else:
-        print("Invalid Option")
+        elif choice == "N":
+            print(run_menu())
